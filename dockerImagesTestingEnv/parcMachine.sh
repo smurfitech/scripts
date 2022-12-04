@@ -3,12 +3,12 @@
 ###############################################################
 #  TITRE: parc de conteneurs
 #
-#  AUTEUR:   Xavier
+#  AUTEUR:   Ibrahim
 #  VERSION: 1.1
-#  CREATION:  17/09/2018
-#  MODIFIE: 
+#  CREATION: 01/12/2022
+#  MODIFIE: 04/12/2022
 #
-#  DESCRIPTION: 
+#  DESCRIPTION:
 #   mot de passe obtenu par :
 #          perl -e 'print crypt("password", "salt"),"\n"'
 ###############################################################
@@ -46,7 +46,7 @@ if [ "$1" == "--create-debian" ];then
 	echo "Création : ${nbserv} conteneurs..."
 
 	# détermination de l'id mini
-  	id_first=$(docker ps -a --format "{{ .Names }}" |grep "smurf.*-vmparc" | sed s/".*-vmparc"//g  | sort -nr | head -1)
+  	id_first=$(docker ps -a --format "{{ .Names }}" |grep "smurfitech.*-vmparc" | sed s/".*-vmparc"//g  | sort -nr | head -1)
 	id_min=$(($id_first+1))
 
 	#détermination de l'id max
@@ -83,7 +83,7 @@ if [ "$1" == "--create-centos" ];then
         echo "Création : ${nbserv} conteneurs..."
 
         # détermination de l'id mini
-        id_first=$(docker ps -a --format "{{ .Names }}" |grep "oki.*-vmparc" | sed s/".*-vmparc"//g  | sort -nr | head -1)
+        id_first=$(docker ps -a --format "{{ .Names }}" |grep "smurfitech.*-vmparc" | sed s/".*-vmparc"//g  | sort -nr | head -1)
         id_min=$(($id_first+1))
 
         #détermination de l'id max
